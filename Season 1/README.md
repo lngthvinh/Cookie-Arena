@@ -3,6 +3,7 @@
 ### Overview
  | Title | Category | Points | Flag
  | ------ | ------ | ------ | ------ |
+ | [Discord](#Discord) | Misc | 1 | `Flag{Cookie_Han_Hoan}` |
  | [Hân Hoan](#Hân-Hoan) | Web Basic | 1 | `Flag{Cookies_Yummy_Cookies_Yammy!}` |
  | [JS Bp Bp](#JS-Bp-Bp) | Web Basic | 1 | `Flag{JAV-ascript_F*ck}` |
  | [Impossible](#Impossible) | Web Basic | 1 | `Flag{Javascript_is_not_safe???}` |
@@ -10,7 +11,7 @@
  | [I am not a robot](#I-am-not-a-robot) | Web Basic | 1 | `Flag{N0_B0T_@ll0w}` |
  | [Sause](#Sause) | Web Basic | 1 | `Flag{Web_Sause_Delicious}` |
  | [Header 401](#Header-401) | Web Basic | 1 | `Flag{m4g1c@l_h34d3r_xD}` |
- | [SUM()](#SUM()) | Web Basic | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
+ | [SUM()](#SUM()) | Programming | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
  
 # Hân Hoan
  
