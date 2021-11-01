@@ -15,6 +15,7 @@
  | [SQL Filter](#SQL-Filter) | Web Exploitation | 1 | `Flag{Gr33t1nG}` |
  | [The maze runner](#The-maze-runner) | Web Exploitation | 1 | `FLAG{6059e2117ea3eeecdad7faf1e15d16a2}` |
  | [SUM](#SUM) | Programming | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
+ | [Pro102](#Pro102) | Programming | 1 | `Flag{2fast2fur10us}` |
  | [Where is my house](#Where-is-my-house) | Network | 1 | `Flag{DNS_A_AAAA_TXT_CNAME}` |
  | [Scan me if you can](#Scan-me-if-you-can) | Network | 1 | `Flag{Every-Header-Have-It-Own-Meaning}` |
  | [XOR](#XOR) | Cryptography | 1 | `Flag{a^b=c=>b^c=a}` |
@@ -253,6 +254,74 @@ if __name__ == '__main__':
 ```
 
 <img src=temp/1a.png>
+
+# Pro102
+ 
+### Challenge
+ 
+<img src=temp/27.png>
+ 
+### Solution
+
+* Bài này yêu cầu viết một chương trình socket để giao tiếp với server. Đồng thời yêu cầu giả phương trình bậc 2 mà server đưa ra.
+* Server sẽ đưa ra pt bậc 2 như sau (mẫu): `1*X^2 - 594*X - 54675` = 0`
+* Pt có 2 ngiệm, khi gửi phải ghi từ nhỏ đến lớn: `-81, 675`
+* Mình giải quyết như sau: mình sẽ đọc vào chuỗi `banner[:-5]` chỉ lấy `1*X^2 - 594*X - 54675`
+* Sau đó dùng package sympy hỗ trợ giải pt bậc 2 vô cùng tiện lợi: `solve(banner[:-5], x)`
+* Kết quả trả về 1 list: `[-81, 675]`
+* Ta chỉ cần chuyển từ list về string và gửi đi.
+* Chương trình tham khảo như sau.
+
+```python
+#!/usr/bin/python3
+import socket
+from sympy.solvers import solve
+from sympy import Symbol
+
+IP, PORT = ('programming.letspentest.org', 8222)
+
+def receive_all_line(s):
+    data = s.recv(999999)
+    return data.decode()
+
+def receive_one_line(s):
+    r = b''
+    while (True):
+        t = s.recv(1)
+        if t == b'\n': break
+        r = r + t
+    return r.decode()
+
+def send_one_line(s, data):
+    s.sendall(f"{data}\n".encode())
+
+def main():
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((IP, PORT))
+    
+    while True:
+        banner = receive_one_line(s)
+        print(banner)
+        while 'Equation:' not in banner:
+            if 'Flag{' in banner: exit()
+            banner = receive_one_line(s)
+            print(banner)
+        banner = receive_one_line(s)
+        print(banner)
+        x = Symbol('X')
+        arr = solve(banner[:-5], x)
+        ans = ', '.join([str(i) for i in arr])
+        print(ans)
+        send_one_line(s, ans)
+
+    s.close()
+
+if __name__ == '__main__':
+    main()
+
+```
+
+<img src=temp/28.png>
 
 # Where is my house
  
