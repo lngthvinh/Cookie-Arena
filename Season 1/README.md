@@ -7,6 +7,8 @@
  | [JS Bp Bp](#JS-Bp-Bp) | Web Basic | 1 | `Flag{JAV-ascript_F*ck}` |
  | [Impossible](#Impossible) | Web Basic | 1 | `Flag{Javascript_is_not_safe???}` |
  | [Infinite Loop](#Infinite-Loop) | Web Basic | 1 | `Flag{Y0u_c4ptur3_m3_xD!!!}` |
+ | [I am not a robot](#I-am-not-a-robot) | Web Basic | 1 | `Flag{N0_B0T_@ll0w}` |
+ | [Sause](#Sause) | Web Basic | 1 | `Flag{Web_Sause_Delicious}` |
  
 # Hân Hoan
  
@@ -122,3 +124,29 @@ function checkPass()
 * Dùng Burp Suite và submit thì thấy trang liên tục chuyển hướng. Làm 1 hồi ta có được cờ.
 
 <img src=temp/e.png>
+
+# I am not a robot
+ 
+### Challenge
+ 
+<img src=temp/f.png>
+ 
+### Solution
+
+* Bài này cơ bản. Mở file robots.txt và đọc thôi.
+
+<img src=temp/10.png>
+
+<img src=temp/11.png>
+
+# Sause
+ 
+### Challenge
+ 
+<img src=temp/12.png>
+ 
+### Solution
+
+* Bài này cơ bản. Mở source và đọc thôi.
+
+<img src=temp/13.png>
