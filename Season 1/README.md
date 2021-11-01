@@ -12,6 +12,7 @@
  | [Sause](#Sause) | Web Basic | 1 | `Flag{Web_Sause_Delicious}` |
  | [Header 401](#Header-401) | Web Basic | 1 | `Flag{m4g1c@l_h34d3r_xD}` |
  | [SUM()](#SUM()) | Programming | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
+ | [Where is my house?](#Where-is-my-house?) | Network | 1 | `Flag{DNS_A_AAAA_TXT_CNAME}` |
  
 # Hân Hoan
  
@@ -240,3 +241,16 @@ if __name__ == '__main__':
 ```
 
 <img src=temp/1a.png>
+
+# Where is my house?
+ 
+### Challenge
+ 
+<img src=temp/1b.png>
+ 
+### Solution
+
+* Bài này mình dùng https://www.nslookup.io/ để scan.
+
+<img src=temp/1c.png>
+
