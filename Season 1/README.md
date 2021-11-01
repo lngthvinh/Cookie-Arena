@@ -18,7 +18,7 @@
  | [Morse](#Morse) | Cryptography | 1 | `Flag{M.O.R.S.E.C.O.D.E}` |
  | [Julius Caesar](#Julius-Caesar) | Cryptography | 1 | `Flag{El_Clasico_Cipher}` |
  | [Sixty Four](#Sixty-Four) | Cryptography | 1 | `Flag{___Base64xHex___}` |
- | [Basic Image](#Basic Image) | Forensic | 1 | `Flag{metadataratatatataaaaaa}` |
+ | [Basic Image](#Basic-Image) | Forensic | 1 | `Flag{metadataratatatataaaaaa}` |
  
 # Hân Hoan
  
