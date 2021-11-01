@@ -19,6 +19,7 @@
  | [Julius Caesar](#Julius-Caesar) | Cryptography | 1 | `Flag{El_Clasico_Cipher}` |
  | [Sixty Four](#Sixty-Four) | Cryptography | 1 | `Flag{___Base64xHex___}` |
  | [Basic Image](#Basic-Image) | Forensic | 1 | `Flag{metadataratatatataaaaaa}` |
+ | [ExSeller](#ExSeller) | Forensic | 1 | `Flag{Micro$oft_Heck3r_Man}` |
  
 # Hân Hoan
  
@@ -422,4 +423,37 @@ Color Components                : 3
 Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
 Image Size                      : 2048x2048
 Megapixels                      : 4.2
+```
+
+# ExSeller
+ 
+### Challenge
+ 
+[bruteme.xlsx](temp/bruteme.xlsx)
+ 
+### Solution
+
+* Bài này mình dùng binwalk kết hợp grep.
+
+```
+# binwalk -e bruteme.xlsx
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             Zip archive data, at least v2.0 to extract, compressed size: 361, uncompressed size: 1440, name: [Content_Types].xml
+930           0x3A2           Zip archive data, at least v2.0 to extract, compressed size: 244, uncompressed size: 588, name: _rels/.rels
+1735          0x6C7           Zip archive data, at least v2.0 to extract, compressed size: 258, uncompressed size: 980, name: xl/_rels/workbook.xml.rels
+2313          0x909           Zip archive data, at least v2.0 to extract, compressed size: 732, uncompressed size: 1632, name: xl/workbook.xml
+3090          0xC12           Zip archive data, at least v2.0 to extract, compressed size: 1870, uncompressed size: 8390, name: xl/theme/theme1.xml
+5009          0x1391          Zip archive data, at least v2.0 to extract, compressed size: 498, uncompressed size: 916, name: xl/worksheets/sheet2.xml
+5561          0x15B9          Zip archive data, at least v2.0 to extract, compressed size: 458, uncompressed size: 832, name: xl/worksheets/sheet3.xml
+6073          0x17B9          Zip archive data, at least v2.0 to extract, compressed size: 503, uncompressed size: 938, name: xl/worksheets/sheet1.xml
+6630          0x19E6          Zip archive data, at least v2.0 to extract, compressed size: 188, uncompressed size: 223, name: xl/sharedStrings.xml
+6868          0x1AD4          Zip archive data, at least v2.0 to extract, compressed size: 662, uncompressed size: 1540, name: xl/styles.xml
+7573          0x1D95          Zip archive data, at least v2.0 to extract, compressed size: 405, uncompressed size: 831, name: docProps/app.xml
+8288          0x2060          Zip archive data, at least v2.0 to extract, compressed size: 318, uncompressed size: 597, name: docProps/core.xml
+9697          0x25E1          End of Zip archive, footer length: 22
+
+# grep -r "Flag{" _bruteme.xlsx.extracted 
+_bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" count="2" uniqueCount="2"><si><t>check</t></si><si><t>Flag{Micro$oft_Heck3r_Man}</t></si></sst>
 ```
