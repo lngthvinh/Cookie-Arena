@@ -263,10 +263,10 @@ if __name__ == '__main__':
  
 ### Solution
 
-* Bài này yêu cầu viết một chương trình socket để giao tiếp với server. Đồng thời yêu cầu giả phương trình bậc 2 mà server đưa ra.
-* Server sẽ đưa ra pt bậc 2 như sau (mẫu): `1*X^2 - 594*X - 54675` = 0`
+* Bài này yêu cầu viết một chương trình socket để giao tiếp với server. Đồng thời yêu cầu giải phương trình bậc 2 mà server đưa ra.
+* Server sẽ đưa ra pt bậc 2 như sau (mẫu): `1*X^2 - 594*X - 54675 = 0`
 * Pt có 2 ngiệm, khi gửi phải ghi từ nhỏ đến lớn: `-81, 675`
-* Mình giải quyết như sau: mình sẽ đọc vào chuỗi `banner[:-5]` chỉ lấy `1*X^2 - 594*X - 54675`
+* Mình giải quyết bằng cách đọc vào chuỗi `banner[:-5]` chỉ lấy `1*X^2 - 594*X - 54675`
 * Sau đó dùng package sympy hỗ trợ giải pt bậc 2 vô cùng tiện lợi: `solve(banner[:-5], x)`
 * Kết quả trả về 1 list: `[-81, 675]`
 * Ta chỉ cần chuyển từ list về string và gửi đi.
