@@ -18,6 +18,7 @@
  | [Morse](#Morse) | Cryptography | 1 | `Flag{M.O.R.S.E.C.O.D.E}` |
  | [Julius Caesar](#Julius-Caesar) | Cryptography | 1 | `Flag{El_Clasico_Cipher}` |
  | [Sixty Four](#Sixty-Four) | Cryptography | 1 | `Flag{___Base64xHex___}` |
+ | [Basic Image](#Basic Image) | Forensic | 1 | `Flag{metadataratatatataaaaaa}` |
  
 # Hân Hoan
  
@@ -373,3 +374,52 @@ Connection: close
 ### Solution
 
 * Bài này đơn giản thôi. base64 > hex.
+
+# Basic Image
+ 
+### Challenge
+ 
+[KB.jpg](temp/KB.jpg)
+ 
+### Solution
+
+* Dùng exiftool.
+
+```
+# exiftool KB.jpg 
+ExifTool Version Number         : 12.32
+File Name                       : KB.jpg
+Directory                       : .
+File Size                       : 241 KiB
+File Modification Date/Time     : 2021:11:01 20:10:43+07:00
+File Access Date/Time           : 2021:11:01 20:11:16+07:00
+File Inode Change Date/Time     : 2021:11:01 20:11:06+07:00
+File Permissions                : -rw-------
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+JFIF Version                    : 1.02
+Resolution Unit                 : inches
+X Resolution                    : 96
+Y Resolution                    : 96
+Exif Byte Order                 : Big-endian (Motorola, MM)
+Make                            : Flag{metadataratatatataaaaaa}
+Artist                          : cookiehanhoan
+XP Author                       : cookiehanhoan
+Padding                         : (Binary data 2030 bytes, use -b option to extract)
+Current IPTC Digest             : 946603002c9e60851a0e31aed59ec2bd
+Coded Character Set             : UTF8
+Special Instructions            : FBMD01000a8c01000084810000e5040100d82e0100c84d010014c40100f4520200688302007da90200e2c802004aa80300
+By-line                         : cookiehanhoan
+IPTC Digest                     : 946603002c9e60851a0e31aed59ec2bd
+About                           : uuid:faf5bdd5-ba3d-11da-ad31-d33d75182f1b
+Creator                         : cookiehanhoan
+Image Width                     : 2048
+Image Height                    : 2048
+Encoding Process                : Progressive DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+Image Size                      : 2048x2048
+Megapixels                      : 4.2
+```
