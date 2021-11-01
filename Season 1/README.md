@@ -5,6 +5,7 @@
  | ------ | ------ | ------ | ------ |
  | [Hân Hoan](#Hân-Hoan) | Web Basic | 1 | `Flag{Cookies_Yummy_Cookies_Yammy!}` |
  | [JS Bp Bp](#JS-Bp-Bp) | Web Basic | 1 | `Flag{JAV-ascript_F*ck}` |
+ | [Impossible](#Impossible) | Web Basic | 1 | `Flag{Javascript_is_not_safe???}` |
  
 # Hân Hoan
  
@@ -75,4 +76,31 @@ function verifyRole(role) {       if (role.charCodeAt(0) != 64) {         return
 * Vậy role cuối cùng là `@dmiN`
 
 <img src=temp/9.png>
+
+# Impossible
+ 
+### Challenge
+ 
+<img src=temp/a.png>
+ 
+### Solution
+
+* Viewsource ta được đoạn code sau.
+
+```js
+function checkPass()
+{
+	var password = document.getElementById('password').value;
+	if (btoa(password.replace("cookiehanhoan", "")) == "Y29va2llaGFuaG9hbg==") {
+		window.setTimeout(function() {
+			window.location.assign('check.php?password=' + password);
+		}, 500);
+	}
+}
+```
+
+* Decode base64 `Y29va2llaGFuaG9hbg==` ta được `cookiehanhoan`. Vậy password nhập `cookiehanhoan` là được, tuy nhiên bị hàm replace bỏ đi.
+* Vậy đơn giản là ta nhập password như sau: `cookiecookiehanhoanhanhoan` (vì hàm replace chỉ thực hiện 1 lần)
+
+<img src=temp/b.png>
 
