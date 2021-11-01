@@ -21,6 +21,7 @@
  | [Basic Image](#Basic-Image) | Forensic | 1 | `Flag{metadataratatatataaaaaa}` |
  | [ExSeller](#ExSeller) | Forensic | 1 | `Flag{Micro$oft_Heck3r_Man}` |
  | [Streamer](#Streamer) | Forensic | 1 | `Flag{TCP_streamin_go_skrrrrrrrt}` |
+ | [Interceptor](#Interceptor) | Forensic | 1 | `Flag{1s_th1s_m1sc3llan30us?}` |
  
 # Hân Hoan
  
@@ -481,3 +482,17 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 <img src=temp/23.png>
 
 * Thử dùng password đó mở file zip. (Kết quả thành công, ta có được cờ.)
+
+# Interceptor
+ 
+### Challenge
+ 
+[cooooooooooookie.gif](temp/cooooooooooookie.gif)
+ 
+### Solution
+
+* Mình dùng công cụ split gif online để cắt https://ezgif.com/split
+* Sau đó quan sát thì thấy ở mỗi hình có 1 phần mã QR.
+* Tổng có 9 phần, ghép lại đủ ta được mã QR code. Scan mã ta được cờ.
+
+<img src=temp/24.png>
