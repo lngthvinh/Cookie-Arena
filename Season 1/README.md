@@ -20,6 +20,7 @@
  | [Sixty Four](#Sixty-Four) | Cryptography | 1 | `Flag{___Base64xHex___}` |
  | [Basic Image](#Basic-Image) | Forensic | 1 | `Flag{metadataratatatataaaaaa}` |
  | [ExSeller](#ExSeller) | Forensic | 1 | `Flag{Micro$oft_Heck3r_Man}` |
+ | [Streamer](#Streamer) | Forensic | 1 | `Flag{TCP_streamin_go_skrrrrrrrt}` |
  
 # Hân Hoan
  
@@ -457,3 +458,26 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 # grep -r "Flag{" _bruteme.xlsx.extracted 
 _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" count="2" uniqueCount="2"><si><t>check</t></si><si><t>Flag{Micro$oft_Heck3r_Man}</t></si></sst>
 ```
+
+# Streamer
+ 
+### Challenge
+ 
+[travis.pcapng](temp/travis.pcapng)
+ 
+### Solution
+
+* Bài cho ta 1 file pcapng. Dùng wireshark để đọc.
+* Thử xem trên giao thức HTTP có file nào lấy được không (File > Export Objects > HTTP...) thì phát hiện có file `evilcontent.zip`. 
+
+<img src=temp/21.png>
+
+* OK save xuống và mở lên thì thấy file `flag.txt`
+
+<img src=temp/22.png>
+
+* Ta cần tìm pass để mở, thử xem tiếp qua giao thức TCP (Analyze > Follow > TCP Stream). Xem 1 lượt đến stream thứ 5 thì thấy như sau.
+
+<img src=temp/23.png>
+
+* Thử dùng password đó mở file zip. (Kết quả thành công, ta có được cờ.)
