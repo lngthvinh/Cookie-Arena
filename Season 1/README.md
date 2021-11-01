@@ -13,6 +13,7 @@
  | [Header 401](#Header-401) | Web Basic | 1 | `Flag{m4g1c@l_h34d3r_xD}` |
  | [SUM](#SUM) | Programming | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
  | [Where is my house](#Where-is-my-house) | Network | 1 | `Flag{DNS_A_AAAA_TXT_CNAME}` |
+ | [Scan me if you can](#Scan-me-if-you-can) | Network | 1 | `Flag{Every-Header-Have-It-Own-Meaning}` |
  
 # Hân Hoan
  
@@ -254,3 +255,68 @@ if __name__ == '__main__':
 
 <img src=temp/1c.png>
 
+# Scan me if you can
+ 
+### Challenge
+ 
+<img src=temp/1d.png>
+ 
+### Solution
+
+* Scan port của nó.
+
+```
+# nmap -Pn network-insecure.letspentest.org
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times will be slower.
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-11-01 18:37 +07
+Nmap scan report for network-insecure.letspentest.org (18.140.65.99)
+Host is up (0.057s latency).
+rDNS record for 18.140.65.99: ec2-18-140-65-99.ap-southeast-1.compute.amazonaws.com
+Not shown: 999 filtered ports
+PORT     STATE SERVICE
+9003/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 169.98 seconds
+```
+
+* Có 1 port nhưng không xác định được dịch vụ.
+* Scan kiểu khác xem.
+
+```
+# nmap -sV network-insecure.letspentest.org
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-11-01 18:36 +07
+Nmap scan report for network-insecure.letspentest.org (18.140.65.99)
+Host is up (0.0073s latency).
+rDNS record for 18.140.65.99: ec2-18-140-65-99.ap-southeast-1.compute.amazonaws.com
+Not shown: 999 filtered ports
+PORT     STATE SERVICE    VERSION
+9003/tcp open  tcpwrapped
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 11.25 seconds
+```
+
+* Lần này thì thấy port `9003` sử dụng dịch vụ `tcpwrapped`.
+* Xem thử 1 vài thông tin về tcpwrapped. Thì khi xem đến trang này https://news.cloud365.vn/tcp-wrappers-chung-la-gi-va-chung-duoc-su-dung-nhu-the-nao-trong-linux/
+* Họ có đề cập `Wrappers không hoạt động với các dịch vụ gọi thủ tục từ xa (RPC) qua TCP)`
+* OK, vậy netcat thử.
+
+```
+# nc network-insecure.letspentest.org 9003
+aaa
+HTTP/1.1 400 Bad Request
+Server: Flag{Every-Header-Have-It-Own-Meaning}Date: Mon, 01 Nov 2021 11:53:07 GMT
+Content-Type: text/html
+Content-Length: 157
+Connection: close
+
+<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<center><h1>400 Bad Request</h1></center>
+<hr><center>nginx/1.20.0</center>
+</body>
+</html>
+```
+
+* Vậy là có được cờ.
