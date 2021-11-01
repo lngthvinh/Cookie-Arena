@@ -11,6 +11,7 @@
  | [I am not a robot](#I-am-not-a-robot) | Web Basic | 1 | `Flag{N0_B0T_@ll0w}` |
  | [Sause](#Sause) | Web Basic | 1 | `Flag{Web_Sause_Delicious}` |
  | [Header 401](#Header-401) | Web Basic | 1 | `Flag{m4g1c@l_h34d3r_xD}` |
+ | [Ét Quy Eo](#Ét-Quy-Eo) | Web Exploitation | 1 | `Flag{Fr33_Styl3}` |
  | [SUM](#SUM) | Programming | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
  | [Where is my house](#Where-is-my-house) | Network | 1 | `Flag{DNS_A_AAAA_TXT_CNAME}` |
  | [Scan me if you can](#Scan-me-if-you-can) | Network | 1 | `Flag{Every-Header-Have-It-Own-Meaning}` |
@@ -496,3 +497,14 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 * Tổng có 9 phần, ghép lại đủ ta được mã QR code. Scan mã ta được cờ.
 
 <img src=temp/24.png>
+
+# Ét Quy Eo
+ 
+### Challenge
+ 
+<img src=temp/25.png>
+ 
+### Solution
+
+* Bài này cho ta 1 form login, thử `' or 1=1--` thì được ngay.
+* Ta được mã base64 `RmxhZ3tGcjMzX1N0eWwzfQ==` decode ta có được cờ.
