@@ -15,6 +15,7 @@
  | [Where is my house](#Where-is-my-house) | Network | 1 | `Flag{DNS_A_AAAA_TXT_CNAME}` |
  | [Scan me if you can](#Scan-me-if-you-can) | Network | 1 | `Flag{Every-Header-Have-It-Own-Meaning}` |
  | [XOR](#XOR) | Cryptography | 1 | `Flag{a^b=c=>b^c=a}` |
+ | [Morse](#Morse) | Cryptography | 1 | `Flag{M.O.R.S.E.C.O.D.E}` |
  
 # Hân Hoan
  
@@ -338,4 +339,14 @@ Connection: close
 <img src=temp/1e.png>
 
 <img src=temp/1f.png>
+
+# Morse
+ 
+### Challenge
+ 
+[cipher.wav](temp/cipher.wav)
+ 
+### Solution
+
+* Mở file lên nghe tút tút.. OK Morse đấy, mình dùng trang này rồi bỏ vào cho nó làm việc thôi https://morsecode.world/international/decoder/audio-decoder-expert.html
 
