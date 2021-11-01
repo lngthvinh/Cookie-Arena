@@ -11,8 +11,8 @@
  | [I am not a robot](#I-am-not-a-robot) | Web Basic | 1 | `Flag{N0_B0T_@ll0w}` |
  | [Sause](#Sause) | Web Basic | 1 | `Flag{Web_Sause_Delicious}` |
  | [Header 401](#Header-401) | Web Basic | 1 | `Flag{m4g1c@l_h34d3r_xD}` |
- | [SUM()](#SUM()) | Programming | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
- | [Where is my house?](#Where-is-my-house?) | Network | 1 | `Flag{DNS_A_AAAA_TXT_CNAME}` |
+ | [SUM](#SUM) | Programming | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
+ | [Where is my house](#Where-is-my-house) | Network | 1 | `Flag{DNS_A_AAAA_TXT_CNAME}` |
  
 # Hân Hoan
  
@@ -180,7 +180,7 @@ function checkPass()
 
 <img src=temp/18.png>
 
-# SUM()
+# SUM
  
 ### Challenge
  
@@ -242,7 +242,7 @@ if __name__ == '__main__':
 
 <img src=temp/1a.png>
 
-# Where is my house?
+# Where is my house
  
 ### Challenge
  
