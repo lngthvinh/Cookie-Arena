@@ -12,6 +12,7 @@
  | [Sause](#Sause) | Web Basic | 1 | `Flag{Web_Sause_Delicious}` |
  | [Header 401](#Header-401) | Web Basic | 1 | `Flag{m4g1c@l_h34d3r_xD}` |
  | [Ét Quy Eo](#Ét-Quy-Eo) | Web Exploitation | 1 | `Flag{Fr33_Styl3}` |
+ | [SQL Filter](#SQL-Filter) | Web Exploitation | 1 | `Flag{Gr33t1nG}` |
  | [The maze runner](#The-maze-runner) | Web Exploitation | 1 | `FLAG{6059e2117ea3eeecdad7faf1e15d16a2}` |
  | [SUM](#SUM) | Programming | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
  | [Where is my house](#Where-is-my-house) | Network | 1 | `Flag{DNS_A_AAAA_TXT_CNAME}` |
@@ -509,6 +510,18 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 
 * Bài này cho ta 1 form login, thử `' or 1=1--` thì được ngay.
 * Ta được mã base64 `RmxhZ3tGcjMzX1N0eWwzfQ==` decode ta có được cờ.
+
+# SQL Filter
+ 
+### Solution
+
+* Bài này vẫn là SQLi tuy nhiên có filter.
+* Thử với chữ `or` => blacklist
+* Thử với `is` => được
+* Thử với `not` => được
+* Thử với `is not` => blacklist
+* OK, do this `is/**/not` => pass
+* Vậy payload của ta đơn giản như sau: `'/**/is/**/not/**/'a` => login thành công được mã base64, decode ra cờ
 
 # The maze runner
  
