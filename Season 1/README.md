@@ -6,6 +6,7 @@
  | [Hân Hoan](#Hân-Hoan) | Web Basic | 1 | `Flag{Cookies_Yummy_Cookies_Yammy!}` |
  | [JS Bp Bp](#JS-Bp-Bp) | Web Basic | 1 | `Flag{JAV-ascript_F*ck}` |
  | [Impossible](#Impossible) | Web Basic | 1 | `Flag{Javascript_is_not_safe???}` |
+ | [Infinite Loop](#Infinite-Loop) | Web Basic | 1 | `Flag{Y0u_c4ptur3_m3_xD!!!}` |
  
 # Hân Hoan
  
@@ -104,3 +105,20 @@ function checkPass()
 
 <img src=temp/b.png>
 
+# Infinite Loop
+ 
+### Challenge
+ 
+<img src=temp/c.png>
+ 
+### Solution
+
+* Truy cập trang ta được 1 form submit.
+
+<img src=temp/d.png>
+
+* Lúc submit thì thấy nó load khá lâu.
+* Đề bài đề cập đến vòng lặp và công cụ mạnh mẽ vậy chắc nói đến Burp Suite rồi.
+* Dùng Burp Suite và submit thì thấy trang liên tục chuyển hướng. Làm 1 hồi ta có được cờ.
+
+<img src=temp/e.png>
