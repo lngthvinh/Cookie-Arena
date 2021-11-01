@@ -14,6 +14,7 @@
  | [SUM](#SUM) | Programming | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
  | [Where is my house](#Where-is-my-house) | Network | 1 | `Flag{DNS_A_AAAA_TXT_CNAME}` |
  | [Scan me if you can](#Scan-me-if-you-can) | Network | 1 | `Flag{Every-Header-Have-It-Own-Meaning}` |
+ | [XOR](#XOR) | Cryptography | 1 | `Flag{a^b=c=>b^c=a}` |
  
 # Hân Hoan
  
@@ -320,3 +321,21 @@ Connection: close
 ```
 
 * Vậy là có được cờ.
+
+# XOR
+ 
+### Challenge
+ 
+[encrypt.py](temp/encrypt.py)
+
+[cipher.txt](temp/cipher.txt)
+ 
+### Solution
+
+* Mở file encrypt.py xem thử thì thấy key len chỉ có 1.
+* OK, vậy chỉ cần bruteforce thôi. Mình dùng trang này https://www.dcode.fr/xor-cipher, sử dụng tùy chọn `KNOWING THE KEY SIZE (IN BYTES)` là `1`
+
+<img src=temp/1e.png>
+
+<img src=temp/1f.png>
+
