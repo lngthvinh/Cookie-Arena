@@ -10,6 +10,7 @@
  | [I am not a robot](#I-am-not-a-robot) | Web Basic | 1 | `Flag{N0_B0T_@ll0w}` |
  | [Sause](#Sause) | Web Basic | 1 | `Flag{Web_Sause_Delicious}` |
  | [Header 401](#Header-401) | Web Basic | 1 | `Flag{m4g1c@l_h34d3r_xD}` |
+ | [SUM()](#SUM()) | Web Basic | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
  
 # Hân Hoan
  
@@ -176,3 +177,65 @@ function checkPass()
 * Vậy ta cần bổ sung thêm vào header như sau: `Authorization: Basic Z2Fjb25sb250b246Y29va2llaGFuaG9hbg==` với `Authorization: Basic Z2Fjb25sb250b246Y29va2llaGFuaG9hbg==` là base64 của `gaconlonton:cookiehanhoan`
 
 <img src=temp/18.png>
+
+# SUM()
+ 
+### Challenge
+ 
+<img src=temp/19.png>
+ 
+### Solution
+
+* Bài này yêu cầu viết một chương trình socket để giao tiếp với server. Đồng thời yêu cầu thực hiện tính tổng các số mà server đưa ra.
+* Server sẽ đưa ra 1 dãy các số như sau: `14254 77252 90039 72763 21060 72080 63176 27633 80700 12487`
+* ý tưởng của mình là replace khoảng trắng (' ') thành dấu cộng ('+') sử dụng: `banner.replace(' ', '+')`
+* Sau đó chỉ cần dùng hàm `eval` là tính được tổng: `eval(banner[:-1])` (ở đây mình bỏ dấu + cuối)
+* Chương trình mình giải quyết bài này như sau (bạn đọc có thể tham khảo)
+
+```python
+#!/usr/bin/python3
+import socket
+
+IP, PORT = ('programming.letspentest.org', 8111)
+
+def receive_all_line(s):
+    data = s.recv(999999)
+    return data.decode()
+
+def receive_one_line(s):
+    r = b''
+    while (True):
+        t = s.recv(1)
+        if t == b'\n': break
+        r = r + t
+    return r.decode()
+
+def send_one_line(s, data):
+    s.sendall(f"{data}\n".encode())
+
+def main():
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((IP, PORT))
+    
+    while True:
+        banner = receive_one_line(s)
+        print(banner)
+        while 'Number list:' not in banner:
+            if 'Flag{' in banner: exit()
+            banner = receive_one_line(s)
+            print(banner)
+        banner = receive_one_line(s)
+        print(banner)
+        banner = banner.replace(' ', '+')
+        answer = eval(banner[:-1])
+        print(answer)
+        send_one_line(s, answer)
+
+    s.close()
+
+if __name__ == '__main__':
+    main()
+
+```
+
+<img src=temp/1a.png>
