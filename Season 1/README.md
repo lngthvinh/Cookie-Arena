@@ -9,6 +9,7 @@
  | [Infinite Loop](#Infinite-Loop) | Web Basic | 1 | `Flag{Y0u_c4ptur3_m3_xD!!!}` |
  | [I am not a robot](#I-am-not-a-robot) | Web Basic | 1 | `Flag{N0_B0T_@ll0w}` |
  | [Sause](#Sause) | Web Basic | 1 | `Flag{Web_Sause_Delicious}` |
+ | [Header 401](#Header-401) | Web Basic | 1 | `Flag{m4g1c@l_h34d3r_xD}` |
  
 # Hân Hoan
  
@@ -150,3 +151,28 @@ function checkPass()
 * Bài này cơ bản. Mở source và đọc thôi.
 
 <img src=temp/13.png>
+
+# Header 401
+ 
+### Challenge
+ 
+<img src=temp/14.png>
+ 
+### Solution
+
+* Đề bài đề cập đến HTTP Protocol. Vậy đổi GET thành POST ta được gì (sử dụng Burp Suite).
+
+<img src=temp/15.png>
+
+* `Missing Basic Authorization Header`. OK, nếu view source ta cũng nhận được thông tin là `Basic Authentication Credential: gaconlonton/cookiehanhoan`.
+
+<img src=temp/16.png>
+
+* Vậy ta còn thiếu header cho phần xác thực.
+* Các bạn có thể đọc thêm ở đây https://en.wikipedia.org/wiki/Basic_access_authentication
+
+<img src=temp/17.png>
+
+* Vậy ta cần bổ sung thêm vào header như sau: `Authorization: Basic Z2Fjb25sb250b246Y29va2llaGFuaG9hbg==` với `Authorization: Basic Z2Fjb25sb250b246Y29va2llaGFuaG9hbg==` là base64 của `gaconlonton:cookiehanhoan`
+
+<img src=temp/18.png>
