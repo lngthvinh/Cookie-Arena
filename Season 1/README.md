@@ -16,6 +16,7 @@
  | [The maze runner](#The-maze-runner) | Web Exploitation | 1 | `FLAG{6059e2117ea3eeecdad7faf1e15d16a2}` |
  | [SUM](#SUM) | Programming | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
  | [Pro102](#Pro102) | Programming | 1 | `Flag{2fast2fur10us}` |
+ | [Roberval](#Roberval) | Programming | 1 | `Flag{n0_pr0b_w1th_cub3_r00t_RIGHT?}` |
  | [Where is my house](#Where-is-my-house) | Network | 1 | `Flag{DNS_A_AAAA_TXT_CNAME}` |
  | [Scan me if you can](#Scan-me-if-you-can) | Network | 1 | `Flag{Every-Header-Have-It-Own-Meaning}` |
  | [XOR](#XOR) | Cryptography | 1 | `Flag{a^b=c=>b^c=a}` |
@@ -198,6 +199,13 @@ function checkPass()
 ### Challenge
  
 <img src=temp/19.png>
+
+```
+# nc programming.letspentest.org 8111
+Number list: 
+14254 77252 90039 72763 21060 72080 63176 27633 80700 12487
+Calculate the equation of this numbers:
+```
  
 ### Solution
 
@@ -260,6 +268,13 @@ if __name__ == '__main__':
 ### Challenge
  
 <img src=temp/27.png>
+
+```
+# nc programming.letspentest.org 8222
+Equation: 
+1*X^2 - 594*X - 54675 = 0
+Calculate the roots of this equation:
+```
  
 ### Solution
 
@@ -322,6 +337,82 @@ if __name__ == '__main__':
 ```
 
 <img src=temp/28.png>
+
+# Roberval
+ 
+### Challenge
+ 
+<img src=temp/29.png>
+
+```
+# nc programming.letspentest.org 8333
+Harry có một túi bi gồm N viên, trong đó, có 1 viên bi nhẹ hơn so với các viên bi còn lại. Harry cho thí sinh một chiếc cân Roberval và yêu cầu sử dụng chiếc cân này để tìm ra viên bi nhẹ hơn với ít số lần cân nhất. 
+Với N = 243 
+Số lần cân ít nhất là:
+```
+ 
+### Solution
+
+* Bạn đã nghe qua bài toán cân bi chưa? Chưa biết thì đọc đi nhé.
+* Hướng giải quyết là ta sẽ sử dụng thuật toán "chia ba".
+* Lấy N chia 3 rồi cập nhật N là kết quả của phép tính. Đến khi N còn 1 hoặc 2 (tức < 3) thì số lần đem chia 3 chính là số lần cân ít nhất.
+* *Lưu ý: Do mình nhận thấy server chỉ gửi số lẻ nên mình sẽ giải quyết theo cách trên. Bài toàn vừa nêu chưa thật sự tối ưu và chính xác (nhưng mình cũng tìm được cờ nên dừng lại, bạn đọc tham khảo và phát triển thêm nhé)*
+
+```python
+#!/usr/bin/python3
+import socket
+
+IP, PORT = ('programming.letspentest.org', 8333)
+
+def receive_all_line(s):
+    data = s.recv(999999)
+    return data.decode()
+
+def receive_one_line(s):
+    r = b''
+    while (True):
+        t = s.recv(1)
+        if t == b'\n': break
+        r = r + t
+    return r.decode()
+
+def send_one_line(s, data):
+    s.sendall(f"{data}\n".encode())
+
+def solver(n):
+    count = 0
+    while (n >= 3):
+        n = n // 3
+        count += 1
+    return count
+
+def main():
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((IP, PORT))
+    
+    while True:
+        banner = receive_one_line(s)
+        print(banner)
+        while 'N =' not in banner:
+            if 'Flag{' in banner: exit()
+            banner = receive_one_line(s)
+            print(banner)
+        banner = banner[8:]
+        answer = solver(int(banner))
+
+        banner = receive_one_line(s)
+        print(banner)
+        send_one_line(s, answer)
+        print(answer)
+
+    s.close()
+
+if __name__ == '__main__':
+    main()
+
+```
+
+<img src=temp/2a.png>
 
 # Where is my house
  
