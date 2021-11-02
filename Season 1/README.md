@@ -16,6 +16,7 @@
  | [The maze runner](#The-maze-runner) | Web Exploitation | 1 | `FLAG{6059e2117ea3eeecdad7faf1e15d16a2}` |
  | [Misconfiguration](#Misconfiguration) | Web Exploitation | 1 | `Flag{1b283f0725d536a0f217d89caca7b183}` |
  | [Gatling gun](#Gatling-gun) | Web Exploitation | 1 | `FLAG{e6c068faf9241fe9d1f2000516718377}` |
+ | [ID OR1=1](#ID-OR1=1) | Web Exploitation | 1 | `Flag{61cb4a784e83b6109999af6f036b88bf}` |
  | [SUM](#SUM) | Programming | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
  | [Pro102](#Pro102) | Programming | 1 | `Flag{2fast2fur10us}` |
  | [Roberval](#Roberval) | Programming | 1 | `Flag{n0_pr0b_w1th_cub3_r00t_RIGHT?}` |
@@ -1003,3 +1004,20 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 * Đợi 1 tí là có cờ.
 
 <img src=temp/3a.png>
+
+# ID OR1=1
+ 
+### Challenge
+ 
+<img src=temp/3e.png>
+
+`Hint: Cuộc dạo chơi của những con số`
+ 
+### Solution
+
+* Bài này nhập id vào từ 1 đến 200 thì bình thường `{"Age":24,"Email":"h.chapman@randatmail.com","First_Name":"Heather","Gender":"Female","Id":1,"Last_Name":"Chapman"}`. 
+* Nhập lớn hơn hay không phải số ta được `{"status":"invalid id"}`
+* Ờm, không chắc đâu, brute force cho chắc nhé. Mình brute force từ 1 đến 2000. Đông thời mình cũng đặt grep match `{"status":"invalid id"}` và `{"Age":`
+* 1337 vẫn ra kết quả không phải `{"status":"invalid id"}`. Cờ nằm ở đây.
+
+<img src=temp/3f.png>
