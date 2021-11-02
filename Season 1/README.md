@@ -19,6 +19,7 @@
  | [Roberval](#Roberval) | Programming | 1 | `Flag{n0_pr0b_w1th_cub3_r00t_RIGHT?}` |
  | [Where is my house](#Where-is-my-house) | Network | 1 | `Flag{DNS_A_AAAA_TXT_CNAME}` |
  | [Scan me if you can](#Scan-me-if-you-can) | Network | 1 | `Flag{Every-Header-Have-It-Own-Meaning}` |
+ | [Very Good Shipper](#Very-Good-Shipper) | Network | 1 | `Flag{t00-ez-4-y0u}` |
  | [XOR](#XOR) | Cryptography | 1 | `Flag{a^b=c=>b^c=a}` |
  | [Morse](#Morse) | Cryptography | 1 | `Flag{M.O.R.S.E.C.O.D.E}` |
  | [Julius Caesar](#Julius-Caesar) | Cryptography | 1 | `Flag{El_Clasico_Cipher}` |
@@ -491,6 +492,79 @@ Connection: close
 ```
 
 * Vậy là có được cờ.
+
+# Very Good Shipper
+ 
+### Challenge
+ 
+<img src=temp/2b.png>
+ 
+### Solution
+
+* Bài này chỉ cần netcat vào và trả lời câu hỏi.
+
+```
+# nc network.letspentest.org 9003
+
+Chào mừng bạn đến với cánh cửa thử thách của Cookie Arena Season 1.
+ Để vượt qua thử thách này, hãy trả lời đúng các câu hỏi dưới đây.
+Ở mỗi câu hỏi bạn sẽ có 10s để nhập câu trả lời A, B, C, D.
+
+Ngoài 3 giải chính (nhất, nhì, ba), thì Cookie Hân Hoan có bao nhiêu giải thưởng phụ?
+A.5
+B.2
+C.8
+D.10
+D
+
+░ ∗ ◕ ں ◕ ∗ ░ Chuẩn Rồi ░ ∗ ◕ ں ◕ ∗ ░
+
+Cookie Hân Hoan là fanpage chia sẻ về?
+A.Bài học cuộc sống 
+B.Chuyện cười 
+C.Bánh bánh quy
+D.Bảo mật và an toàn thông tin
+D
+
+░ ∗ ◕ ں ◕ ∗ ░ Chuẩn Rồi ░ ∗ ◕ ں ◕ ∗ ░
+
+Có bao nhiêu chủ đề trong Cookie Arena Season 1?
+A.6
+B.2
+C.4
+D.3
+A
+
+░ ∗ ◕ ں ◕ ∗ ░ Chuẩn Rồi ░ ∗ ◕ ں ◕ ∗ ░
+
+Cookie Hân Hoan có bao nhiêu nhân vật chính?
+A.1
+B.4
+C.2
+D.3
+B
+
+░ ∗ ◕ ں ◕ ∗ ░ Chuẩn Rồi ░ ∗ ◕ ں ◕ ∗ ░
+
+Bạn đang kết nối tới cánh cửa này thông qua giao thức mạng nào?
+A.TCP
+B.UDP
+C.ICMP
+D.FTP
+A
+
+░ ∗ ◕ ں ◕ ∗ ░ Chuẩn Rồi ░ ∗ ◕ ں ◕ ∗ ░
+
+Những người được ban tổ chức lựa chọn để trao giải, có phải gửi cách giải các thử thách (write-up) cho BTC không?
+A.Có
+B.Không
+A
+
+░ ∗ ◕ ں ◕ ∗ ░ Chuẩn Rồi ░ ∗ ◕ ں ◕ ∗ ░
+
+
+Flag{t00-ez-4-y0u}
+```
 
 # XOR
  
