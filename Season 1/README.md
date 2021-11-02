@@ -15,6 +15,7 @@
  | [SQL Filter](#SQL-Filter) | Web Exploitation | 1 | `Flag{Gr33t1nG}` |
  | [The maze runner](#The-maze-runner) | Web Exploitation | 1 | `FLAG{6059e2117ea3eeecdad7faf1e15d16a2}` |
  | [Misconfiguration](#Misconfiguration) | Web Exploitation | 1 | `Flag{1b283f0725d536a0f217d89caca7b183}` |
+ | [Gatling gun](#Gatling-gun) | Web Exploitation | 1 | `FLAG{e6c068faf9241fe9d1f2000516718377}` |
  | [SUM](#SUM) | Programming | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
  | [Pro102](#Pro102) | Programming | 1 | `Flag{2fast2fur10us}` |
  | [Roberval](#Roberval) | Programming | 1 | `Flag{n0_pr0b_w1th_cub3_r00t_RIGHT?}` |
@@ -958,3 +959,29 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 ```
 
 <img src=temp/32.png>
+
+# Gatling gun
+ 
+### Challenge
+ 
+<img src=temp/36.png>
+ 
+### Solution
+
+* Truy cập trang web có 3 chỗ input và bài đề cập đến gatling gun. Là muốn ta bruteforce tuy nhiên có tới 3 input thì hơi nhiều.
+
+<img src=temp/37.png>
+
+* Gợi ý bài là `"nhặt đạn ở trong Github của Cookie Hân Hoan"`.
+* Tìm đến github với user có tên `"Cookie Hân Hoan"`.
+
+<img src=temp/38.png>
+
+* Vào repo `HoangTuEch` ta thấy có 3 file ứng với 3 input.
+
+<img src=temp/39.png>
+
+* OK, có đạn rồi, brute force thôi. Sử dụng burp suite chế độ intruder cluster bomb (bạn đọc tự tìm hiểu nhé https://youtu.be/4mpszXedKeQ?t=431).
+* Đợi 1 tí là có cờ.
+
+<img src=temp/3a.png>
