@@ -14,6 +14,7 @@
  | [Ét Quy Eo](#Ét-Quy-Eo) | Web Exploitation | 1 | `Flag{Fr33_Styl3}` |
  | [SQL Filter](#SQL-Filter) | Web Exploitation | 1 | `Flag{Gr33t1nG}` |
  | [The maze runner](#The-maze-runner) | Web Exploitation | 1 | `FLAG{6059e2117ea3eeecdad7faf1e15d16a2}` |
+ | [Misconfiguration](#Misconfiguration) | Web Exploitation | 1 | `Flag{1b283f0725d536a0f217d89caca7b183}` |
  | [SUM](#SUM) | Programming | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
  | [Pro102](#Pro102) | Programming | 1 | `Flag{2fast2fur10us}` |
  | [Roberval](#Roberval) | Programming | 1 | `Flag{n0_pr0b_w1th_cub3_r00t_RIGHT?}` |
@@ -907,3 +908,27 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 * Bài này trang web cho ta một mê cung rất nhiều site.
 * Mình giải quyết bằng cách liệt kê ra tất cả các site sử dụng https://www.mysitemapgenerator.com/
 * Sau đó phát hiện có site chưa cờ là `/MS70RIE/2D5TA9DK/UGR85I0H/60ADG`
+
+# Misconfiguration
+ 
+### Challenge
+ 
+<img src=temp/2f.png>
+ 
+### Solution
+
+* Bài này mình dùng dirsearch để tìm các site truy cập được. Kết quả có 2 site.
+
+<img src=temp/30.png>
+
+<img src=temp/31.png>
+
+* Đến đây thì ta có 2 phần của cờ.
+* Tải xuống file `backup-ddmmyy.bak` mà site 2 đề cập. Dump nó với HxD thì thấy có file part3.txt nhúng được nhúng bên trong.
+* Dùng `binwalk` để giải nén. Ta được phần còn lại của cờ.
+
+```bash
+# binwalk -e backup-ddmmyy.bak
+```
+
+<img src=temp/32.png>
