@@ -21,6 +21,7 @@
  | [Scan me if you can](#Scan-me-if-you-can) | Network | 1 | `Flag{Every-Header-Have-It-Own-Meaning}` |
  | [Very Good Shipper](#Very-Good-Shipper) | Network | 1 | `Flag{t00-ez-4-y0u}` |
  | [Post Office Man](#Post-Office-Man) | Network | 1 | `Flag{1-Ha\/3-1o0o-UnS33n-3Ma1L}` |
+ | [Secure HTTP](#Secure-HTTP) | Network | 1 | `Flag{This-Is-A-Trusted-One}` |
  | [XOR](#XOR) | Cryptography | 1 | `Flag{a^b=c=>b^c=a}` |
  | [Morse](#Morse) | Cryptography | 1 | `Flag{M.O.R.S.E.C.O.D.E}` |
  | [Julius Caesar](#Julius-Caesar) | Cryptography | 1 | `Flag{El_Clasico_Cipher}` |
@@ -689,6 +690,20 @@ For using this service you MUST enable cookie and javascript, cookie is just to 
 
 ThrowAwayMail Team
 ```
+
+# Secure HTTP
+ 
+### Challenge
+ 
+<img src=temp/2d.png>
+ 
+### Solution
+
+* Truy cập trang với HTTP thì ko được. Thử với HTTPS thì được.
+* Bài đề cập đến `"mã hóa dữ liệu trong quá trình trao đổi giữa trình duyệt và máy chủ"`.
+* OK, dùng wireshark để capture thử nhé. Mình Follow TCP đến Stream thứ 5 là thấy cờ.
+
+<img src=temp/2e.png>
 
 # XOR
  
