@@ -31,6 +31,7 @@
  | [ExSeller](#ExSeller) | Forensic | 1 | `Flag{Micro$oft_Heck3r_Man}` |
  | [Streamer](#Streamer) | Forensic | 1 | `Flag{TCP_streamin_go_skrrrrrrrt}` |
  | [Interceptor](#Interceptor) | Forensic | 1 | `Flag{1s_th1s_m1sc3llan30us?}` |
+ | [AudiCaty](#AudiCaty) | Forensic | 1 | `Flag{No_Bullets_for_Player_001}` |
  
 # Hân Hoan
  
@@ -873,6 +874,19 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 * Tổng có 9 phần, ghép lại đủ ta được mã QR code. Scan mã ta được cờ.
 
 <img src=temp/24.png>
+
+# AudiCaty
+ 
+### Challenge
+ 
+[squitgaem.wav](temp/squitgaem.wav)
+ 
+### Solution
+
+* AudiCaty tức là đề cập đến Audacity. Vậy dùng Audacity để mở file. 
+* Mình đặt Spectrogram và Rate 22050Hz là đọc được cờ.
+
+<img src=temp/34.png>
 
 # Ét Quy Eo
  
