@@ -925,6 +925,9 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 
 * Đến đây thì ta có 2 phần của cờ.
 * Tải xuống file `backup-ddmmyy.bak` mà site 2 đề cập. Dump nó với HxD thì thấy có file part3.txt nhúng được nhúng bên trong.
+
+<img src=temp/33.png>
+
 * Dùng `binwalk` để giải nén. Ta được phần còn lại của cờ.
 
 ```bash
