@@ -470,8 +470,7 @@ Nmap done: 1 IP address (1 host up) scanned in 11.25 seconds
 ```
 
 * Lần này thì thấy port `9003` sử dụng dịch vụ `tcpwrapped`.
-* Xem thử 1 vài thông tin về tcpwrapped. Thì khi xem đến trang này https://news.cloud365.vn/tcp-wrappers-chung-la-gi-va-chung-duoc-su-dung-nhu-the-nao-trong-linux/
-* Họ có đề cập `Wrappers không hoạt động với các dịch vụ gọi thủ tục từ xa (RPC) qua TCP)`
+* Xem thử 1 vài thông tin về tcpwrapped. Thì khi xem đến trang này https://news.cloud365.vn/tcp-wrappers-chung-la-gi-va-chung-duoc-su-dung-nhu-the-nao-trong-linux/. Họ có đề cập `Wrappers không hoạt động với các dịch vụ gọi thủ tục từ xa (RPC) qua TCP)`
 * OK, vậy netcat thử.
 
 ```
