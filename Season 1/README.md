@@ -31,7 +31,8 @@
  | [ExSeller](#ExSeller) | Forensic | 1 | `Flag{Micro$oft_Heck3r_Man}` |
  | [Streamer](#Streamer) | Forensic | 1 | `Flag{TCP_streamin_go_skrrrrrrrt}` |
  | [Interceptor](#Interceptor) | Forensic | 1 | `Flag{1s_th1s_m1sc3llan30us?}` |
- | [AudiCaty](#AudiCaty) | Forensic | 1 | `Flag{No_Bullets_for_Player_001}` |
+ | [AudiCaty](#AudiCaty) | Forensic | 1 | `Flag{No_Bullets_for_Player_001}` 
+ | [Volatility](#Volatility) | Forensic | 1 | `Flag{7ef31e58bd4086e294b4d700c721f35f}` |
  
 # Hân Hoan
  
@@ -887,6 +888,14 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 * Mình đặt Spectrogram và Rate 22050Hz là đọc được cờ.
 
 <img src=temp/34.png>
+
+# Volatility
+ 
+### Solution
+
+* Bài này mình chỉ cần dùng `strings` và `grep` là tìm được cờ.
+
+<img src=temp/35.png>
 
 # Ét Quy Eo
  
