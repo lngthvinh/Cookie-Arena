@@ -1017,7 +1017,7 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 
 * Bài này nhập id vào từ 1 đến 200 thì bình thường `{"Age":24,"Email":"h.chapman@randatmail.com","First_Name":"Heather","Gender":"Female","Id":1,"Last_Name":"Chapman"}`. 
 * Nhập lớn hơn hay không phải số ta được `{"status":"invalid id"}`
-* Ờm, không chắc đâu, brute force cho chắc nhé. Mình brute force từ 1 đến 2000. Đông thời mình cũng đặt grep match `{"status":"invalid id"}` và `{"Age":`
+* Ờm, không chắc đâu, brute force cho chắc nhé. Mình brute force từ 1 đến 2000. Đồng thời mình cũng đặt grep match `{"status":"invalid id"}` và `{"Age":`
 * 1337 vẫn ra kết quả không phải `{"status":"invalid id"}`. Cờ nằm ở đây.
 
 <img src=temp/3f.png>
