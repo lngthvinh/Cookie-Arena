@@ -20,6 +20,7 @@
  | [Where is my house](#Where-is-my-house) | Network | 1 | `Flag{DNS_A_AAAA_TXT_CNAME}` |
  | [Scan me if you can](#Scan-me-if-you-can) | Network | 1 | `Flag{Every-Header-Have-It-Own-Meaning}` |
  | [Very Good Shipper](#Very-Good-Shipper) | Network | 1 | `Flag{t00-ez-4-y0u}` |
+ | [Post Office Man](#Post-Office-Man) | Network | 1 | `Flag{1-Ha\/3-1o0o-UnS33n-3Ma1L}` |
  | [XOR](#XOR) | Cryptography | 1 | `Flag{a^b=c=>b^c=a}` |
  | [Morse](#Morse) | Cryptography | 1 | `Flag{M.O.R.S.E.C.O.D.E}` |
  | [Julius Caesar](#Julius-Caesar) | Cryptography | 1 | `Flag{El_Clasico_Cipher}` |
@@ -564,6 +565,130 @@ A
 
 
 Flag{t00-ez-4-y0u}
+```
+
+# Post Office Man
+ 
+### Challenge
+ 
+<img src=temp/2c.png>
+ 
+### Solution
+
+* Bài này thì cứ netcat vào ta thấy server đề cập đến USER, PASS.
+* OK bạn có biết giao thức POP3 và các câu lệnh ko. Tìm đọc nhé.
+* *POP viết tắt của từ Post Office Protocol là một giao thức tầng ứng dụng, dùng để lấy thư điện tử từ server mail, thông qua kết nối TCP/IP.*
+
+```
+# nc network.letspentest.org 9002                                      
++OK popper file-based pop3 server ready
+
+Please using USER to login first
+Các Bạn hãy sử dụng câu lênh USER để login vào hệ thống
+(Cứ nhập linh tinh zô 乁| ･ 〰 ･ |ㄏ)
+USER aaaa
+
++OK user accepted
+
+Please using PASS to login first
+Các Bạn hãy sử dụng câu lênh PASS để login vào hệ thống
+(Cú nhập linh tinh zô 乁| ･ 〰 ･ |ㄏ)
+PASS aaaa
+
++OK pass accepted
+
+
+POP3 do not understand the command  ▐  ⊙ ▃ ⊙ ▐
+POP3 không hiểu cấu lệnh mà bạn vừa nhập vào  ▐  ⊙ ▃ ⊙ ▐
+STAT
+
++OK 10 9400
+RETR 10
+
++OK 940 octets
+Received: from [208.10.167.165] by sweetwater.netease.net
+(SMTPD32-5.05) id AC28801E8; Thu, 19 Aug 1999 20:15:20 -0500
+Message-Id: <199908192015750.SM00960@>
+X-RCPT-TO: dusty@demo.netease.net
+Date: Thu, 19 Aug 1999 20:15:55 -0500
+X-UIDL: 230371285
+Status: U
+From: <dusty@netease.net>
+
+
+Subject: test
+Dear Anonymous,
+
+Thank you for using ThrowAway Mail to fight spam, your temporary disposable email is :
+
+prugochihu@wemel.site
+
+Get the #1 Rated VPN Exclusive offer: Save 49% & try ExpressVPM 100% risk-free!
+
+
+Use it to communicate with any website you want to. You have 48 hours to use this mailbox, if you do not visit your mail inbox within 48 hours, it wil be deleted , once visited your mail box extends to another 48 hours.
+
+For using this service you MUST enable cookie and javascript, cookie is just to record your session id and language preference, your Privacy is covered under our Privacy and Cookie policy .
+
+ThrowAwayMail Team
+
+RETR 9
+
++OK 940 octets
+Received: from [208.10.167.165] by sweetwater.netease.net
+(SMTPD32-5.05) id AC28801E8; Thu, 19 Aug 1999 20:15:20 -0500
+Message-Id: <199908192015750.SM00960@>
+X-RCPT-TO: dusty@demo.netease.net
+Date: Thu, 19 Aug 1999 20:15:55 -0500
+X-UIDL: 230371285
+Status: U
+From: <dusty@netease.net>
+
+
+Subject: test
+Dear Anonymous,
+
+Thank you for using ThrowAway Mail to fight spam, your temporary disposable email is :
+
+prugochihu@wemel.site
+
+Get the #1 Rated VPN Exclusive offer: Save 49% & try ExpressVPM 100% risk-free!
+
+
+Use it to communicate with any website you want to. You have 48 hours to use this mailbox, if you do not visit your mail inbox within 48 hours, it wil be deleted , once visited your mail box extends to another 48 hours.
+
+For using this service you MUST enable cookie and javascript, cookie is just to record your session id and language preference, your Privacy is covered under our Privacy and Cookie policy .
+
+ThrowAwayMail Team
+
+RETR 8
+
++OK 940 octets
+Received: from [208.10.167.165] by sweetwater.netease.net
+(SMTPD32-5.05) id AC28801E8; Thu, 19 Aug 1999 20:15:20 -0500
+Message-Id: <199908192015750.SM00960@>
+X-RCPT-TO: dusty@demo.netease.net
+Date: Thu, 19 Aug 1999 20:15:55 -0500
+X-UIDL: 230371285
+Status: U
+From: <dusty@netease.net>
+
+
+Subject: test
+Dear Anonymous,
+
+Thank you for using ThrowAway Mail to fight spam, your temporary disposable email is :
+
+prugochihu@wemel.site
+
+************************| Flag{1-Ha\/3-1o0o-UnS33n-3Ma1L} |********************
+
+
+Use it to communicate with any website you want to. You have 48 hours to use this mailbox, if you do not visit your mail inbox within 48 hours, it wil be deleted , once visited your mail box extends to another 48 hours.
+
+For using this service you MUST enable cookie and javascript, cookie is just to record your session id and language preference, your Privacy is covered under our Privacy and Cookie policy .
+
+ThrowAwayMail Team
 ```
 
 # XOR
