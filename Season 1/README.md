@@ -32,8 +32,9 @@
  | [ExSeller](#ExSeller) | Forensic | 1 | `Flag{Micro$oft_Heck3r_Man}` |
  | [Streamer](#Streamer) | Forensic | 1 | `Flag{TCP_streamin_go_skrrrrrrrt}` |
  | [Interceptor](#Interceptor) | Forensic | 1 | `Flag{1s_th1s_m1sc3llan30us?}` |
- | [AudiCaty](#AudiCaty) | Forensic | 1 | `Flag{No_Bullets_for_Player_001}` 
+ | [AudiCaty](#AudiCaty) | Forensic | 1 | `Flag{No_Bullets_for_Player_001}` |
  | [Volatility](#Volatility) | Forensic | 1 | `Flag{7ef31e58bd4086e294b4d700c721f35f}` |
+ | [Github](#Github) | Forensic | 1 | `Flag{no_where_to_hide_gitleaks}` |
  
 # Hân Hoan
  
@@ -897,6 +898,23 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 * Bài này mình chỉ cần dùng `strings` và `grep` là tìm được cờ.
 
 <img src=temp/35.png>
+
+# Github
+ 
+### Challenge
+ 
+<img src=temp/3b.png>
+ 
+### Solution
+
+* Bài đề cập đến `github` và `quá khứ`. Vậy là `git log` rồi.
+* Clone về rồi liệt kê các log.
+
+<img src=temp/3c.png>
+
+* OK nhiều đó, dùng search cho nhanh.
+
+<img src=temp/3d.png>
 
 # Ét Quy Eo
  
