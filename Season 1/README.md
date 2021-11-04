@@ -18,6 +18,7 @@
  | [Gatling gun](#Gatling-gun) | Web Exploitation | 1 | `FLAG{e6c068faf9241fe9d1f2000516718377}` |
  | [ID OR1=1](#ID-OR11) | Web Exploitation | 1 | `Flag{61cb4a784e83b6109999af6f036b88bf}` |
  | [XSS](#XSS) | Web Exploitation | 1 | `FLAG{10c802c9c6afc26769764b5b986d708a}` |
+ | [Paparazzi](#Paparazzi) | Web Exploitation | 1 | `FLAG{abc725173fa1828ea919503669b4eecd}` |
  | [SUM](#SUM) | Programming | 1 | `Flag{1plust1_1s_2_qu1ck_mafth}` |
  | [Pro102](#Pro102) | Programming | 1 | `Flag{2fast2fur10us}` |
  | [Roberval](#Roberval) | Programming | 1 | `Flag{n0_pr0b_w1th_cub3_r00t_RIGHT?}` |
@@ -1038,3 +1039,23 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 
 <img src=temp/41.png>
 
+# Paparazzi
+ 
+### Challenge
+ 
+<img src=temp/42.png>
+ 
+### Solution
+
+* Bài cho ta 1 input vào url, input thử `https://www.google.com/` ta được 1 file hình png trang ta vừa nhập (ok paparazzi).
+* Vậy đoán là page được thực hiện phía server, nên có thể là SSRF. Thử với `file:///etc/passwd` (thành công).
+
+<img src=temp/43.png>
+
+* Đến đây, ta thử tiếp với `file:///proc/1/cwd` (nếu bạn không biết, thì cái này sẽ trỏ về thư mục hiện tại mà web đang làm việc).
+
+<img src=temp/44.png>
+
+* OK có thư mục lạ, thử tiếp ta có file flag.txt
+
+<img src=temp/45.png>
