@@ -954,6 +954,16 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 * Mình giải quyết bằng cách liệt kê ra tất cả các site sử dụng https://www.mysitemapgenerator.com/
 * Sau đó phát hiện có site chưa cờ là `/MS70RIE/2D5TA9DK/UGR85I0H/60ADG`
 
+* Một cách khác hiệu quả hơn là ta sử dụng `wget` kết hợp `grep`.
+
+```
+# wget -r http://chal10.web.letspentest.org
+# grep -ri 'Flag{' chal10.web.letspentest.org
+chal10.web.letspentest.org/MS70RIE/2D5TA9DK/UGR85I0H/60ADG:FLAG{6059e2117ea3eeecdad7faf1e15d16a2}
+chal10.web.letspentest.org/NYMJXN8P7/PEI5L996:FLAG{Still_Fake_Flag_Lmao}
+chal10.web.letspentest.org/BK9EUA/EOGRYM/1BCWTY:FLAG{Fake_Flag}
+```
+
 # Misconfiguration
  
 ### Challenge
@@ -975,7 +985,7 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 
 * Dùng `binwalk` để giải nén. Ta được phần còn lại của cờ.
 
-```bash
+```
 # binwalk -e backup-ddmmyy.bak
 ```
 
