@@ -895,7 +895,11 @@ _bruteme.xlsx.extracted/xl/sharedStrings.xml:<sst xmlns="http://schemas.openxmlf
 <img src=temp/34.png>
 
 # Volatility
- 
+
+### Challenge
+
+[file](https://drive.google.com/file/d/1PMbu0KbORvRD7Sp2-V-2e-97YIJUY86p/view)
+
 ### Solution
 
 * Bài này mình chỉ cần dùng `strings` và `grep` là tìm được cờ.
